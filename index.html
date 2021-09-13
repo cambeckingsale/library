@@ -4,16 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
+    <title>MyReads2021</title>
 
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Glory">
 
 </head>
 <body>
+    <header>
+        <h1 class="logo">MyReads2021</h1>
+    </header>
     <div class="container">
-
+        <div class="cards"></div>
+        <div class="form-section">
+            <form action="submit" class="new-book-form">
+                <label for="title">Book Title: </label>
+                <input type="text" name="title" id="title">
+                <label for="author">Author: </label>
+                <input type="text" name="author" id="author">
+                <label for="pages">Number of pages: </label>
+                <input type="text" name="pages" id="pages">
+                <label for="choice">Have you read this? </label>
+                <div class="read-container">
+                    <span aria-hidden="true">No</span>
+                    <input class="read" type="range" max="1" id="read" name="read">
+                    <span aria-hidden="true">Yes</span>
+                </div>
+                <input class="submit-button" type="submit" value="Add this book to library">
+            </form>
+        </div>
     </div>
+    <footer>
+        <a class='gh-link' href="https://github.com/cambeckingsale/calculator" target=”_blank” >
+            <img src="assets/imgs/GitHub-Mark-Light-32px.png" width="22px" height="22px" alt="Github logo">
+            <div>cbeckingsale</div>
+        </a>
+    </footer>
     
 </body>
 </html>
