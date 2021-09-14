@@ -1,4 +1,5 @@
 let library = [];
+const defaultLibraryJSON = `[{"title":"Harry Potter and the Philosopher's Stone","author":"J.K Rowling","pages":"223","readStatus":true,"id":"43b4f41d-2f08-44eb-ade2-e7f2d667863f"},{"title":"Harry Potter and the Chamber of Secrets","author":"J.K Rowling","pages":"251","readStatus":false,"id":"73ff0332-587b-4495-b289-26b9b6a95ebd"},{"title":"Harry Potter and the Prisoner of Azkaban","author":"J.K Rowling","pages":"317","readStatus":true,"id":"5259ed26-e436-4aea-aa3f-7975866f8e03"},{"title":"Harry Potter and the Goblet of Fire","author":"J.K Rowling","pages":"636","readStatus":false,"id":"13e98e12-358d-40b7-9754-cfe2f3576902"},{"title":"Harry Potter and the Order of the Phoenix","author":"J.K Rowling","pages":"766","readStatus":true,"id":"a9cf4f2f-6ac4-4762-94db-3b52e802fcc2"},{"title":"Harry Potter and the Half-Blood Prince","author":"J.K Rowling","pages":"607","readStatus":true,"id":"74e5c847-3d72-4fd8-ac13-1b32575cd325"},{"title":"Harry Potter and the Deathly Hallows","author":"J.K Rowling","pages":"607","readStatus":false,"id":"a025906a-2552-4376-b0d5-8c3505bd2d61"},{"title":"Possum Magic","author":"Mem Fox","pages":"17","readStatus":true,"id":"37f36191-f60d-45cd-8563-85492d479b30"}]`
 
 class Book {
     constructor(title, author, pages, readStatus) {
@@ -106,6 +107,10 @@ const addBooks = function addBooks(libraryToLoad) {
     // add all books in the passes libraryToLoad array
     if (libraryToLoad != null) {
         libraryToLoad.forEach((book) => addBook(book));
+    }
+    else {
+        const defaultLibrary = JSON.parse(defaultLibraryJSON);
+        defaultLibrary.forEach((book) => addBook(book))
     }
 }
 
